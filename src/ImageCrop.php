@@ -2,16 +2,6 @@
 namespace yimao\autoCropImage;
 
 /**
- * Author : smallchicken
- * Time   : 2009年6月8日16:46:05
- * Last Time: 2010年5月5日 10:24:30
- * mode 1 : 强制裁剪，生成图片严格按照需要，不足放大，超过裁剪，图片始终铺满
- * mode 2 : 和1类似，但不足的时候 不放大 会产生补白，可以用png消除。
- * mode 3 : 只缩放，不裁剪，保留全部图片信息，会产生补白，
- * mode 4 : 只缩放，不裁剪，保留全部图片信息，此时的参数只是限制了生成的图片的最大宽高，不产生补白
- * mode 5 : 生成的图比例严格按照需要的比例，宽和高不超过给定的参数。
- * 默认补白为白色，如果要使补白成透明像素，请使用SaveAlpha()方法代替SaveImage()方法
- *
  * 调用方法：
  *
  * $ic=new ImageCrop('old.jpg','afterCrop.jpg');

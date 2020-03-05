@@ -5,10 +5,6 @@ use yimao\autoCropImage\ImageCrop;
 
 /**
  * autoCropImage - 图片自动缩放程序
- *
- * @link https://github.com/mingfunwong/autoCropImage
- * @license http://opensource.org/licenses/MIT
- * @author Mingfun Wong <mingfun.wong.chn@gmail.com>
  */
 class autoCropImage
 {
@@ -26,7 +22,7 @@ class autoCropImage
     private $default_version = 1;
 
     /* header 缓存时长 */
-    private $cache_time = '10 years';
+    private $cache_time = '1 years';
 
     public function __construct($options)
     {
@@ -174,7 +170,7 @@ class autoCropImage
         imagecolorallocate($img, 0xff, 0xff, 0xff);
         $size = 12;
         $color = imagecolorallocate($img, 0xcc, 0xcc, 0xcc);
-        $font = "./static/fonts/image.ttf";
+        $font = __DIR__ . '/../assets/' . "image.ttf";
         $string = 'No image';
 
         imagettftext($img, $size, 0, 10, 56, $color, $font, $string);
