@@ -9,18 +9,23 @@ class AutoCropImageController
 {
     public function index()
     {
-        $config = Config::pull('thumb'); // 获取缩略图配置
+        // 默认配置
+        $options = [
+            'thumb_dir' => '/uploads/thumb/%1$sx%2$s_mode%3$s/%4$s/%5$s',
+            'default_mode' => 1,
+            'default_version' => 1,
+            'images_dir' => '',
+            'cache_time' => '1 years',
+        ];
+        // 合并配置
+        $config = array_merge($options, Config::pull('thumb'));
+
         $root_path = Env::get('root_path'); // root_path 项目根路径
         $root_path = rtrim($root_path, '/,\\'); // 去掉右侧 /
         $root_path .= '/public'; //
 
         /* 初始化 */
-        $options = [
-            'default_mode' => $config['default_mode'],
-            'default_version' => $config['default_version'],
-            'cache_time' => $config['cache_time'],
-        ];
-        $autoCropImage = new autoCropImage($options);
+        $autoCropImage = new autoCropImage($config);
 
         /* 设置头信息 */
         $autoCropImage->set_header();
