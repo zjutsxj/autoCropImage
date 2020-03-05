@@ -62,10 +62,10 @@ RewriteRule ^.*(?:gif|jpg|jpeg|png|GIF|JPG|JPEG|PNG)(?:_)([0-9]+)x([0-9]+)(?:m([
 
 存放缩略图目录权限修改为可写入  
 使用浏览器访问  
-http://localhost/images/pic.jpg、 
+http://localhost/images/pic.jpg、   
 http://localhost/images/pic.jpg_50x100.jpg  
 当第二个地址看见缩略图即安装成功  
 
 ## 参考资料 
-该扩展是参考 autoCropImage 项目进行扩展的
+该扩展是参考 autoCropImage 项目进行扩展的  
 autoCropImage 开源项目 https://github.com/mingfunwong/autoCropImage
